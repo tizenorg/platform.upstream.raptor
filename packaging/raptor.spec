@@ -59,14 +59,13 @@ unset MALLOC_CHECK_
 
 %postun -n libraptor -p /sbin/ldconfig
 
-%clean
-rm -rf %{buildroot}
+
+%docs_package 
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS COPYING COPYING.LIB ChangeLog LICENSE.txt NEWS README
+%license COPYING COPYING.LIB LICENSE.txt 
 %{_bindir}/rapper
-%{_mandir}/man?/*
 
 %files -n libraptor-devel
 %defattr(-,root,root)
