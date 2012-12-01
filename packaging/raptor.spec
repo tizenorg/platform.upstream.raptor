@@ -46,21 +46,20 @@ raptor library.
 %configure --disable-gtk-doc --disable-static --with-pic --with-html-dir=%{_docdir}
 make %{?_smp_flags}
 
-%install
-%make_install
-mv %{buildroot}%{_docdir}/raptor2 %{buildroot}%{_docdir}/raptor-devel
-
 %check
 export MALLOC_CHECK_=2
 make check
 unset MALLOC_CHECK_
+
+%install
+%make_install
 
 %post -n libraptor -p /sbin/ldconfig
 
 %postun -n libraptor -p /sbin/ldconfig
 
 
-%docs_package 
+%remove_package 
 
 %files
 %defattr(-,root,root)
@@ -69,7 +68,6 @@ unset MALLOC_CHECK_
 
 %files -n libraptor-devel
 %defattr(-,root,root)
-%doc %{_docdir}/raptor-devel
 %{_libdir}/lib*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
