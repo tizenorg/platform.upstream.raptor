@@ -54,13 +54,13 @@ unset MALLOC_CHECK_
 %install
 %make_install
 rm -rf %{buildroot}/%{_docdir}
+%remove_docs
 
 %post -n libraptor -p /sbin/ldconfig
 
 %postun -n libraptor -p /sbin/ldconfig
 
 
-%remove_package 
 
 %files
 %defattr(-,root,root)
