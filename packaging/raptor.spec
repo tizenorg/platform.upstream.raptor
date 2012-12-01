@@ -53,6 +53,7 @@ unset MALLOC_CHECK_
 
 %install
 %make_install
+rm -rf %{buildroot}/%{_docdir}
 
 %post -n libraptor -p /sbin/ldconfig
 
