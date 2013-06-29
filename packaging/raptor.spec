@@ -7,6 +7,7 @@ Group:          System/Libraries
 Url:            http://www.redland.opensource.ac.uk/raptor/
 Source0:        %{name}2-%{version}.tar.gz
 Source1:        baselibs.conf
+Source1001: 	raptor.manifest
 BuildRequires:  autoconf
 BuildRequires:  curl-devel
 BuildRequires:  pkgconfig(libxslt)
@@ -41,6 +42,7 @@ raptor library.
 
 %prep
 %setup -q -n %{name}2-%{version}
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-gtk-doc --disable-static --with-pic --with-html-dir=%{_docdir}
@@ -63,17 +65,20 @@ rm -rf %{buildroot}/%{_docdir}
 
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %license COPYING COPYING.LIB LICENSE.txt 
 %{_bindir}/rapper
 
 %files -n libraptor-devel
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/lib*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
 
 %files -n libraptor
+%manifest %{name}.manifest
 %defattr(-,root,root)
 %{_libdir}/libraptor2.so.0*
 
