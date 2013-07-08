@@ -1,0 +1,8 @@
+Change-Id: I1bb91f5afced6ecc519540b159dcfb6abf607017
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 09:39:04 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4940
+Project: platform/upstream/raptor
+Branch: refs/heads/tizen
